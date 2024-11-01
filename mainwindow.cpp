@@ -8,6 +8,7 @@
 #include <QTextStream>
 #include <QColorDialog>
 #include <QFontDialog>
+#include <QRegularExpression>
 
 MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent)
@@ -244,16 +245,47 @@ void MainWindow::on_actionTextColor_triggered()
 {
     QColor color = QColorDialog::getColor(Qt::black, this, "选择颜色");
     if(color.isValid()){
-        ui->textEdit->setStyleSheet(QString("QPlainTextEdit {color: %1}").arg((color.name())));
+        // ui->textEdit->setStyleSheet(QString("QPlainTextEdit {color: %1}").arg((color.name())));
+        QString currentStyle = ui->textEdit->styleSheet();
+        QString newStyle = currentStyle;
+        QRegularExpression regex("color:\\s*([^;]+);?");
+        QRegularExpressionMatch match = regex.match(currentStyle);
+        if (match.hasMatch()) {
+            // 如果有匹配，替换匹配的文本
+            newStyle.replace(match.capturedStart(0), match.capturedLength(0), "color: " + color.name() + ";");
+        } else {
+            // 如果没有匹配，添加新的颜色设置
+            // 注意：如果当前样式表中没有分号结尾，需要添加分号
+            if (!newStyle.endsWith(";")) {
+                newStyle += ";";
+            }
+            newStyle += "color: " + color.name() + ";";
+        }
+        ui->textEdit->setStyleSheet(newStyle);
     }
-
 }
 
 void MainWindow::on_actionBackgroundColor_triggered()
 {
     QColor color = QColorDialog::getColor(Qt::black, this, "选择颜色");
     if(color.isValid()){
-        ui->textEdit->setStyleSheet(QString("QPlainTextEdit {background-color: %1}").arg((color.name())));
+        // ui->textEdit->setStyleSheet(QString("QPlainTextEdit {background-color: %1}").arg((color.name())));
+        QString currentStyle = ui->textEdit->styleSheet();
+        QString newStyle = currentStyle;
+        QRegularExpression regex("background-color:\\s*([^;]+);?");
+        QRegularExpressionMatch match = regex.match(currentStyle);
+        if (match.hasMatch()) {
+            // 如果有匹配，替换匹配的文本
+            newStyle.replace(match.capturedStart(0), match.capturedLength(0), "background-color: " + color.name() + ";");
+        } else {
+            // 如果没有匹配，添加新的背景色设置
+            // 注意：如果当前样式表中没有分号结尾，需要添加分号
+            if (!newStyle.endsWith(";")) {
+                newStyle += ";";
+            }
+            newStyle += "background-color: " + color.name() + ";";
+        }
+        ui->textEdit->setStyleSheet(newStyle);
     }
 }
 
