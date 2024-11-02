@@ -55,8 +55,8 @@ MainWindow::MainWindow(QWidget *parent)
     connect(ui->actionLinenumber, SIGNAL(triggered(bool)), ui->textEdit, SLOT(showLineNumberArea(bool)));
 
     autoSaveTimer.setInterval(600000); // 设置定时器间隔为10分钟
-    autoSaveTimer.start(); // 启动定时器
-    connect(&autoSaveTimer, SIGNAL(timeout()), this, SLOT(autoSave())); // 连接定时器信号到槽函数
+    connect(ui->textEdit, SIGNAL(textChanged()), this, SLOT(onTextChanged()));   // 连接文本编辑器的 textChanged 信号到槽函数
+    connect(&autoSaveTimer, SIGNAL(timeout()), this, SLOT(autoSave()));  // 连接定时器信号到槽函数
 }
 
 MainWindow::~MainWindow()
@@ -118,10 +118,18 @@ void MainWindow::on_actionOpen_triggered()
     textChanged = false;
 }
 
+void MainWindow::onTextChanged()
+{
+    if (!autoSaveTimer.isActive() && textChanged == true) {
+        autoSaveTimer.start(); // 如果定时器没有启动，则启动定时器
+    }
+}
+
 void MainWindow::autoSave()
 {
     if(textChanged && !filePath.isEmpty()) {
         on_actionSave_triggered();  // 调用保存功能
+        autoSaveTimer.stop();
     }
 }
 

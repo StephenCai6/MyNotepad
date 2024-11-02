@@ -46,7 +46,6 @@ private slots:
 
     void on_actionPaste_triggered();
 
-
     void on_textEdit_copyAvailable(bool b);
 
     void on_textEdit_redoAvailable(bool b);
@@ -75,7 +74,9 @@ private slots:
 
     // void on_actionLinenumber_triggered(bool checked);  // 用了映射就可以不用这个了
 
-    void autoSave();
+    void autoSave(); // 自动保存函数
+
+    void onTextChanged(); // 自动保存计时器
 
 private:
     Ui::MainWindow *ui;
