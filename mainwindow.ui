@@ -135,7 +135,7 @@
   </widget>
   <action name="actionNew">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/new.png</normaloff>:/img/new.png</iconset>
    </property>
    <property name="text">
@@ -156,7 +156,7 @@
   </action>
   <action name="actionOpen">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/open.png</normaloff>:/img/open.png</iconset>
    </property>
    <property name="text">
@@ -174,7 +174,7 @@
   </action>
   <action name="actionSave">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/save.png</normaloff>:/img/save.png</iconset>
    </property>
    <property name="text">
@@ -192,7 +192,7 @@
   </action>
   <action name="actionSaveAs">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/save_as.png</normaloff>:/img/save_as.png</iconset>
    </property>
    <property name="text">
@@ -207,7 +207,7 @@
   </action>
   <action name="actionExit">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/exit.png</normaloff>:/img/exit.png</iconset>
    </property>
    <property name="text">
@@ -225,7 +225,7 @@
   </action>
   <action name="actionUndo">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/undo.png</normaloff>:/img/undo.png</iconset>
    </property>
    <property name="text">
@@ -243,7 +243,7 @@
   </action>
   <action name="actionCut">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/cut.png</normaloff>:/img/cut.png</iconset>
    </property>
    <property name="text">
@@ -261,7 +261,7 @@
   </action>
   <action name="actionCopy">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/copy.png</normaloff>:/img/copy.png</iconset>
    </property>
    <property name="text">
@@ -279,7 +279,7 @@
   </action>
   <action name="actionPaste">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/paste.png</normaloff>:/img/paste.png</iconset>
    </property>
    <property name="text">
@@ -297,7 +297,7 @@
   </action>
   <action name="actionFind">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/find.png</normaloff>:/img/find.png</iconset>
    </property>
    <property name="text">
@@ -315,7 +315,7 @@
   </action>
   <action name="actionReplace">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/replace.png</normaloff>:/img/replace.png</iconset>
    </property>
    <property name="text">
@@ -333,7 +333,7 @@
   </action>
   <action name="actionFont">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/font.png</normaloff>:/img/font.png</iconset>
    </property>
    <property name="text">
@@ -351,7 +351,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/wrap.png</normaloff>:/img/wrap.png</iconset>
    </property>
    <property name="text">
@@ -369,7 +369,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/tool.png</normaloff>:/img/tool.png</iconset>
    </property>
    <property name="text">
@@ -387,7 +387,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/status.png</normaloff>:/img/status.png</iconset>
    </property>
    <property name="text">
@@ -402,7 +402,7 @@
   </action>
   <action name="actionRedo">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/redo.png</normaloff>:/img/redo.png</iconset>
    </property>
    <property name="text">
@@ -420,7 +420,7 @@
   </action>
   <action name="actionSelectAll">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/selectall.png</normaloff>:/img/selectall.png</iconset>
    </property>
    <property name="text">
@@ -438,7 +438,7 @@
   </action>
   <action name="actionAbout">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/about.png</normaloff>:/img/about.png</iconset>
    </property>
    <property name="text">
@@ -456,7 +456,7 @@
     <bool>true</bool>
    </property>
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/linenumber.png</normaloff>:/img/linenumber.png</iconset>
    </property>
    <property name="text">
@@ -474,7 +474,7 @@
   </action>
   <action name="actionTextColor">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/textcolor.png</normaloff>:/img/textcolor.png</iconset>
    </property>
    <property name="text">
@@ -489,7 +489,7 @@
   </action>
   <action name="actionBackgroundColor">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/background_color.png</normaloff>:/img/background_color.png</iconset>
    </property>
    <property name="text">
@@ -504,7 +504,7 @@
   </action>
   <action name="actionTextBackgroundColor">
    <property name="icon">
-    <iconset>
+    <iconset resource="notepad.qrc">
      <normaloff>:/img/text_bgc.png</normaloff>:/img/text_bgc.png</iconset>
    </property>
    <property name="text">
@@ -525,6 +525,8 @@
    <header location="global">codeeditor.h</header>
   </customwidget>
  </customwidgets>
- <resources/>
+ <resources>
+  <include location="notepad.qrc"/>
+ </resources>
  <connections/>
 </ui>

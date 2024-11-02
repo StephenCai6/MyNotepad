@@ -153,8 +153,11 @@ void MainWindow::on_actionSave_triggered()
 void MainWindow::on_actionSaveAs_triggered()
 {
     QString filename = QFileDialog::getSaveFileName(this,"另存文件",".",tr("Text files (*.txt)"));
-    QFile file(filename);
+    if (filename.isEmpty()) {
+        return;
+    }
 
+    QFile file(filename);
     if(!file.open(QFile::WriteOnly | QFile::Text)) {
         QMessageBox::warning(this,"🥬","文件保存失败");
         return;
