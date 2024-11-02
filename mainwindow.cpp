@@ -53,6 +53,10 @@ MainWindow::MainWindow(QWidget *parent)
 
     // 用信号去关联 对应的槽函数
     connect(ui->actionLinenumber, SIGNAL(triggered(bool)), ui->textEdit, SLOT(showLineNumberArea(bool)));
+
+    autoSaveTimer.setInterval(600000); // 设置定时器间隔为10分钟
+    autoSaveTimer.start(); // 启动定时器
+    connect(&autoSaveTimer, SIGNAL(timeout()), this, SLOT(autoSave())); // 连接定时器信号到槽函数
 }
 
 MainWindow::~MainWindow()
@@ -112,6 +116,13 @@ void MainWindow::on_actionOpen_triggered()
 
     this->setWindowTitle(QFileInfo(filename).absoluteFilePath());
     textChanged = false;
+}
+
+void MainWindow::autoSave()
+{
+    if(textChanged && !filePath.isEmpty()) {
+        on_actionSave_triggered();  // 调用保存功能
+    }
 }
 
 void MainWindow::on_actionSave_triggered()

@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include <QLabel>
+#include <QTimer>
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -74,6 +75,8 @@ private slots:
 
     // void on_actionLinenumber_triggered(bool checked);  // 用了映射就可以不用这个了
 
+    void autoSave();
+
 private:
     Ui::MainWindow *ui;
 
@@ -84,5 +87,6 @@ private:
     bool textChanged;
 
     bool userEditConfirmed();
+    QTimer autoSaveTimer;   // 定时器成员变量
 };
 #endif // MAINWINDOW_H
