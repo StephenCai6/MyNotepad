@@ -40,10 +40,10 @@ MainWindow::MainWindow(QWidget *parent)
     QPlainTextEdit::LineWrapMode mode = ui->textEdit->lineWrapMode();
     if( mode == QTextEdit::NoWrap) {
         ui->textEdit->setLineWrapMode(QPlainTextEdit::WidgetWidth);
-        ui->actionLineWrap->setChecked(false);
+        ui->actionLineWrap->setChecked(true);
     } else {
         ui->textEdit->setLineWrapMode(QPlainTextEdit::NoWrap);
-        ui->actionLineWrap->setChecked(true);
+        ui->actionLineWrap->setChecked(false);
     }
 
     ui->actionToolBar->setChecked(true);
